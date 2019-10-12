@@ -14,6 +14,7 @@ class TicTacToeCLI
         end 
     elsif first_input.downcase == "computer"
       game = Game.new(Players::Human.new("X"), Players::Computer.new("O")) 
+<<<<<<< HEAD
         until game.over?
           game.play 
         end 
@@ -27,6 +28,17 @@ class TicTacToeCLI
     #  game.play 
      # sleep 5
     #  end 
+=======
+        until game.won?
+          game.play 
+        end 
+    elsif first_input.downcase == "nobody"
+      game = Game.new(Players::Computer.new("X"), Players::Computer.new("O")) 
+      9.times do 
+      game.play 
+      sleep 5
+      end 
+>>>>>>> cf3ca564d9abcd7e40fb95d329f80986ee29d93f
     else call 
     end 
     if game.over?
